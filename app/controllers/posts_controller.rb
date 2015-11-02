@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authorize, except: [:index, :show]
 
   def index
-    @posts = Post.all
+    @posts = current_user.posts
   end
 
   def show
@@ -20,7 +20,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.user_name = current_user.name
     if @post.save
       redirect_to @post
     else

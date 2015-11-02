@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :posts, only: [:index, :show, :new, :edit, :create, :update, :destroy]
   get '/login', to: 'sessions#new'
+  get '/signup', to: 'users#new'
 
   #resources :users, shallow: true do
   #  resources :posts, only: [:index, :show, :new, :edit, :create, :update, :destroy] do
