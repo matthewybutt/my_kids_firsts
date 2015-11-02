@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authorize, except: [:index, :show]
+
   def index
     @posts = Post.all
   end
@@ -17,6 +19,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    @post.user_name = current_user.name
     if @post.save
       redirect_to @post
     else
@@ -44,7 +48,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :text, :image_url, :tag, :event_date)
+      params.require(:post).permit(:title, :text, :image_url, :tag, :event_date, :user_id)
     end
 
 end
