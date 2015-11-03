@@ -20,6 +20,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
+    @post.child_id = current_user.children.first.id
+
     if @post.save
       redirect_to @post
     else
