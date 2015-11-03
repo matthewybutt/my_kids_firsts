@@ -17,6 +17,8 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'New Post', new_post_path %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'Account', account_path %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Logout', session_path('dummy'), method: :delete %>
   <% else %>
     <%= link_to 'Login', login_path %>
