@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>My Kid's Firsts</title>
+  <link href='https://fonts.googleapis.com/css?family=Sacramento|Crafty+Girls|Delius|Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -13,9 +14,11 @@
   <% if current_user %>
     Welcome, <%= current_user.name %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'All Posts', controller: 'posts' %>
+    <%= link_to 'Children', children_path %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'New Post', new_post_path %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'All Posts', controller: 'posts' %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Account', account_path %>
     &nbsp;&nbsp;|&nbsp;&nbsp;

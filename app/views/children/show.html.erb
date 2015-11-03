@@ -1,0 +1,37 @@
+<h1> <%= current_user.name %>'s Child, <%= @child.name %> </h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Birthday</th>
+  </tr>
+
+    <tr>
+      <td><%= @child.name %></td>
+      <td><%= @child.birthday %></td>
+    </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.text %></td>
+      <td><%= current_user.name %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+
+</table>

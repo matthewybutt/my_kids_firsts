@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
+    @child = current_user.children
   end
 
   def create
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "You're signed up!"
       session[:user_id] = @user.id
-      redirect_to posts_path
+      redirect_to new_child_path
     else
       render 'new'
     end

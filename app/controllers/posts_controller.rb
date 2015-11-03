@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     @post.child_id = current_user.children.first.id
 
     if @post.save
-      redirect_to @post
+      redirect_to child_path(current_user.children.first.id)
     else
       render 'new'
     end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to child_path
     else
       render 'edit'
     end
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to posts_path
+    redirect_to child_path
   end
 
   private
