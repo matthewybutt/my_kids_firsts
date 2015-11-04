@@ -1,13 +1,15 @@
 class ChildrenController < ApplicationController
   before_action :authorize, except: [:index, :show]
 
+  helper_method :sort_column, :sort_direction
+
   def index
     @child = current_user.children
   end
 
   def show
     @child = Child.find(params[:id])
-    @posts = @child.posts
+    @posts = @child.posts.order(sort_column + " " + sort_direction)
   end
 
   def new
@@ -50,4 +52,11 @@ class ChildrenController < ApplicationController
       params.require(:child).permit(:name, :birthday, :user_id)
     end
 
+    def sort_column
+      @child.posts.column_names.include?(params[:sort]) ? params[:sort] : "event_date"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "dsc"
+    end
 end

@@ -2,8 +2,7 @@
 
   <div class="row title">
     <div class="col-md-12">
-      <p class="text-center"> Hi <%= current_user.name %>!
-                              What did <%= @child.name %> do today?</p>
+      <p class="text-center"> What did <%= @child.name %> do today? </p>
     </div>
   </div>
 
@@ -30,11 +29,11 @@
   </p>
   <% end %>
 
-  <table>
+  <table class="nice">
     <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th>Date</th>
+      <th><%= "Title" %></th>
+      <th><%= "Text" %></th>
+      <th><%= sortable "event_date", "Event Date" %></th>
     </tr>
 
     <% @posts.each do |post| %>
@@ -54,6 +53,6 @@
   </table>
 
 
-  <h5> <%= @child.name %> was born on <%= @child.birthday.strftime("%m/%d/%Y") %>! </h5>
+  <h5> <%= @child.name %> was born on <%= @child.birthday.strftime("%B %d, %Y") %>! </h5>
 
 </div>
