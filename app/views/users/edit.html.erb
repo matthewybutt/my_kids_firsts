@@ -39,14 +39,14 @@
     <th>Birthday</th>
   </tr>
 
-  <% @child.each do |c| %>
+  <% @child.each do |child| %>
 
     <tr>
-      <td><%= c.name %></td>
-      <td><%= c.birthday %></td>
-      <td><%= link_to 'Show', children_path(c) %></td>
-      <td><%= link_to 'Edit', edit_child_path(c) %></td>
-      <td><%= link_to 'Destroy', child_path(c),
+      <td><%= link_to child.name, child_path(child) %></td>
+      <td><%= child.birthday %></td>
+      <td><%= link_to 'Show', child_path(child) %></td>
+      <td><%= link_to 'Edit', edit_child_path(child) %></td>
+      <td><%= link_to 'Destroy', child_path(child),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>

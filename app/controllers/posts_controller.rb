@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-      redirect_to child_path(params[:child_id])
+      redirect_to child_path Child.find(params[:child_id])
     else
       render 'edit'
     end

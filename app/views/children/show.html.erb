@@ -8,7 +8,7 @@
 
     <tr>
       <td><%= @child.name %></td>
-      <td><%= @child.birthday %></td>
+      <td><%= @child.birthday.strftime("%m/%d/%Y") %></td>
     </tr>
 </table>
 
@@ -23,9 +23,10 @@
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
-<p>
+
+  <p>
     <%= f.label :event_date %><br>
-    <%= f.date_select :event_date, :order => [:month, :day, :year] %>
+    <%= f.date_select :event_date, start_year: 1900, end_year: Time.now.year, :order => [:month, :day, :year] %>
   </p>
 
   <p>
@@ -44,6 +45,7 @@
     <tr>
       <td><%= post.title %></td>
       <td><%= post.text %></td>
+      <td><%= post.event_date.strftime("%m/%d/%Y") %></td>
       <td><%= current_user.name %></td>
       <td><%= link_to 'Show', child_post_path(@child, post) %></td>
       <td><%= link_to 'Edit', edit_child_post_path(@child, post) %></td>

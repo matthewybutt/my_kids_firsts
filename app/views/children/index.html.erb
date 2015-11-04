@@ -10,10 +10,11 @@
 
     <tr>
       <td><%= link_to child.name, child_path(child) %></td>
-      <td><%= child.birthday %></td>
+      <td><%= child.birthday.strftime("%m/%d/%Y") %></td>
       <td><%= link_to 'Select', child_path(child) %></td>
 
     </tr>
   <% end %>
 </table>
 
+<%= link_to 'Add A Child', new_child_path %>
