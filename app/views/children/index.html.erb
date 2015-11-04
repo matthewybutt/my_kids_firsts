@@ -1,4 +1,10 @@
-<h1> <%= current_user.name %>'s Children </h1>
+<div class="container-fluid">
+
+  <div class="row title">
+    <div class="col-md-12">
+      <p class="text-center"><%= current_user.name %>'s Children </p>
+    </div>
+  </div>
 
 <table>
   <tr>
@@ -18,3 +24,5 @@
 </table>
 
 <%= link_to 'Add A Child', new_child_path %>
+
+</div>

@@ -1,23 +1,31 @@
-<h1>Child Info</h1>
+<div class="container-fluid">
 
-<%= form_for :child, url: child_path(@child), method: :patch do |f| %>
-  <% if @child.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @child.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="row title">
+    <div class="col-md-12">
+      <p class="text-center">Edit Child Info</p>
     </div>
+  </div>
+
+  <%= form_for :child, url: child_path(@child), method: :patch do |f| %>
+    <% if @child.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @child.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :birthday %>
+      <%= f.date_select :birthday, start_year: 1900, end_year: Time.now.year, :order => [:month, :day, :year] %>
+    </div>
+    <div class="actions"><%= f.submit %></div>
   <% end %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :birthday %>
-    <%= f.date_select :birthday, start_year: 1900, end_year: Time.now.year, :order => [:month, :day, :year] %>
-  </div>
-  <div class="actions"><%= f.submit %></div>
-<% end %>
+
+</div>

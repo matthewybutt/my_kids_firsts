@@ -1,13 +1,26 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="container-fluid">
 
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
+  <div class="row title">
+    <div class="col-md-12">
+      <p class="text-center">A First for <%= @post.child.name %>!</p>
+    </div>
+  </div>
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %>
-&nbsp;&nbsp;|&nbsp;&nbsp;
-<%= link_to 'All Posts', posts_path %>
+  <p>
+    <strong>Text:</strong>
+    <%= @post.text %>
+  </p>
+
+   <p>
+    <strong>Event Date:</strong>
+    <%= @post.event_date.strftime("%m/%d/%Y") %>
+  </p>
+
+  <%= link_to 'Edit', edit_post_path(@post) %>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <%= link_to 'All Posts', posts_path %>
+</div>

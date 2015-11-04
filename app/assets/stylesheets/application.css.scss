@@ -22,9 +22,11 @@
 // font-family: 'Crafty Girls', cursive;
 // font-family: 'Delius', cursive;
 // font-family: 'Love Ya Like A Sister', cursive;
+// font-family: 'Open Sans', sans-serif;
 */
 
 body {
+  padding-top: 70px;
 }
 
 .title {
@@ -34,5 +36,8 @@ body {
 
 .navbar-brand {
   font-family: 'Love Ya Like A Sister', cursive;
+}
 
+.navbar {
+  font-family: 'Open Sans', sans-serif;
 }

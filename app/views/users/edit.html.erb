@@ -1,54 +1,62 @@
-<h1>User Account Info</h1>
+<div class="container-fluid">
 
-<%= form_for :user, url: user_path(@user), method: :patch do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="row title">
+    <div class="col-md-12">
+      <p class="text-center">Your Account Info</p>
     </div>
+  </div>
+
+  <h4>Edit Your Information:</h4>
+  <%= form_for :user, url: user_path(@user), method: :patch do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @user.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="actions"><%= f.submit %></div>
   <% end %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions"><%= f.submit %></div>
-<% end %>
 
-<br>
+  <br>
 
-<h3>Children</h3>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Birthday</th>
-  </tr>
-
-  <% @child.each do |child| %>
-
+  <h3>Children</h3>
+  <table>
     <tr>
-      <td><%= link_to child.name, child_path(child) %></td>
-      <td><%= child.birthday.strftime("%m/%d/%Y") %></td>
-      <td><%= link_to 'Show', child_path(child) %></td>
-      <td><%= link_to 'Edit', edit_child_path(child) %></td>
-      <td><%= link_to 'Destroy', child_path(child),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+      <th>Name</th>
+      <th>Birthday</th>
     </tr>
-  <% end %>
-</table>
+
+    <% @child.each do |child| %>
+
+      <tr>
+        <td><%= link_to child.name, child_path(child) %></td>
+        <td><%= child.birthday.strftime("%m/%d/%Y") %></td>
+        <td><%= link_to 'Show', child_path(child) %></td>
+        <td><%= link_to 'Edit', edit_child_path(child) %></td>
+        <td><%= link_to 'Destroy', child_path(child),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
