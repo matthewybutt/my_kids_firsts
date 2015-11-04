@@ -57,6 +57,7 @@ class ChildrenController < ApplicationController
     end
 
     def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "dsc"
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
     end
+
 end

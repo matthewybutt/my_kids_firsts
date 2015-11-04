@@ -7,52 +7,56 @@
   </div>
 
   <br>
-  <%= form_for [@child, Post.new] do |f| %>
-   <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </p>
+  <div class="row">
+    <div class="col-md-6">
+      <%= form_for [@child, Post.new] do |f| %>
+       <p>
+          <%= f.label :title %><br>
+          <%= f.text_field :title %>
+        </p>
 
-    <p>
-      <%= f.label :text %><br>
-      <%= f.text_area :text, size: "40x5" %>
-    </p>
+        <p>
+          <%= f.label :text %><br>
+          <%= f.text_area :text, size: "40x5" %>
+        </p>
 
-    <p>
-      <%= f.label :event_date %><br>
-      <%= f.date_select :event_date, start_year: 1900, end_year: Time.now.year,
-                        :order => [:month, :day, :year] %>
-    </p>
+        <p>
+          <%= f.label :event_date %><br>
+          <%= f.date_select :event_date, start_year: 1900, end_year: Time.now.year,
+                            :order => [:month, :day, :year] %>
+        </p>
 
-    <p>
-    <%= f.submit %>
-  </p>
-  <% end %>
+        <p>
+        <%= f.submit %>
+      </p>
+      <% end %>
+    </div>
 
-  <table class="nice">
-    <tr>
-      <th><%= "Title" %></th>
-      <th><%= "Text" %></th>
-      <th><%= sortable "event_date", "Event Date" %></th>
-    </tr>
+    <div class="col-md-6">
+      <table>
+        <tr>
+          <th><%= "Title" %></th>
+          <th><%= "Text" %></th>
+          <th><%= sortable "event_date", "Event Date"  %></th>
+        </tr>
 
-    <% @posts.each do |post| %>
+        <% @posts.each do |post| %>
 
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.text %></td>
-        <td><%= post.event_date.strftime("%m/%d/%Y") %></td>
-        <td><%= current_user.name %></td>
-        <td><%= link_to 'Show', child_post_path(@child, post) %></td>
-        <td><%= link_to 'Edit', edit_child_post_path(@child, post) %></td>
-        <td><%= link_to 'Destroy', child_post_path(@child, post),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </table>
+          <tr>
+            <td><%= post.title %></td>
+            <td><%= post.text %></td>
+            <td><%= post.event_date.strftime("%m/%d/%Y") %></td>
+            <td><%= current_user.name %></td>
+            <td><%= link_to 'Show', child_post_path(@child, post) %></td>
+            <td><%= link_to 'Edit', edit_child_post_path(@child, post) %></td>
+            <td><%= link_to 'Destroy', child_post_path(@child, post),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </table>
 
-
-  <h5> <%= @child.name %> was born on <%= @child.birthday.strftime("%B %d, %Y") %>! </h5>
-
+      <h5> <%= @child.name %> was born on <%= @child.birthday.strftime("%B %d, %Y") %>! </h5>
+    </div>
+  </div>
 </div>
