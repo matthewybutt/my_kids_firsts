@@ -13,6 +13,25 @@
 </table>
 
 <br>
+<%= form_for [@child, Post.new] do |f| %>
+ <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+<p>
+    <%= f.label :event_date %><br>
+    <%= f.date_select :event_date, :order => [:month, :day, :year] %>
+  </p>
+
+  <p>
+  <%= f.submit %>
+</p>
+<% end %>
 
 <table>
   <tr>
@@ -26,9 +45,9 @@
       <td><%= post.title %></td>
       <td><%= post.text %></td>
       <td><%= current_user.name %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post_path(post),
+      <td><%= link_to 'Show', child_post_path(@child, post) %></td>
+      <td><%= link_to 'Edit', edit_child_post_path(@child, post) %></td>
+      <td><%= link_to 'Destroy', child_post_path(@child, post),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>

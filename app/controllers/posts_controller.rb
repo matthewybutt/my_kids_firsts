@@ -20,10 +20,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.child_id = current_user.children.first.id
+    @post.child_id = params[:child_id]
 
     if @post.save
-      redirect_to child_path(current_user.children.first.id)
+      redirect_to child_path Child.find(params[:child_id])
     else
       render 'new'
     end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-      redirect_to child_path
+      redirect_to child_path(params[:child_id])
     else
       render 'edit'
     end
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to child_path
+    redirect_to child_path(params[:child_id])
   end
 
   private

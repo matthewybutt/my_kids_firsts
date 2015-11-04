@@ -6,8 +6,8 @@ class ChildrenController < ApplicationController
   end
 
   def show
-    @child = current_user.children.first
-    @posts = Post.where(child_id: @child)
+    @child = Child.find(params[:id])
+    @posts = @child.posts
   end
 
   def new
@@ -15,7 +15,7 @@ class ChildrenController < ApplicationController
   end
 
   def edit
-    @child = current_user.children.first
+    @child = Child.find(params[:id])
   end
 
   def create
@@ -29,7 +29,7 @@ class ChildrenController < ApplicationController
   end
 
   def update
-    @child = current_user.children.first
+    @child = Child.find(params[:id])
 
     if @child.update(child_params)
       redirect_to account_path
@@ -39,7 +39,7 @@ class ChildrenController < ApplicationController
   end
 
   def destroy
-    @child = current_user.children.first
+    @child = Child.find(params[:id])
     @child.destroy
 
     redirect_to account_path
