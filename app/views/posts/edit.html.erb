@@ -17,6 +17,7 @@
   <% end %>
 
   <p>
+    <%= hidden_field_tag(:child_id, @post.child_id) %>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
@@ -30,11 +31,12 @@
     <%= f.label :event_date %><br>
     <%= f.date_select :event_date, start_year: 1900, end_year: Time.now.year, :order => [:month, :day, :year] %>
   </p>
-<!--add image_url, event_date, tags-->
+<!--add image_url, tags-->
 
   <p>
     <%= f.submit %>
   </p>
+
 <% end %>
 
 <%= link_to 'Back', posts_path %>
