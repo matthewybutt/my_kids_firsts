@@ -10,23 +10,36 @@
 </head>
 <body>
 
-<p>
+<nav class="navbar navbar-default">
   <% if current_user %>
-    Welcome, <%= current_user.name %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Children', children_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'All Posts', posts_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Account', account_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Logout', session_path('dummy'), method: :delete %>
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">my kid's firsts</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <p class="navbar-text">Welcome <%= current_user.name %>! </p>
+          <ul class="nav navbar-nav">
+            <li> <%= link_to 'Your Children', children_path %> </li>
+            <li> <%= link_to 'All Posts', posts_path %> </li>
+            <li> <%= link_to 'Your Account', account_path %> </li>
+            <li> <%=link_to 'Logout', session_path('dummy'), method: :delete %> </li>
+          </ul>
+        </div>
+      </div>
   <% else %>
-    <%= link_to 'Login', login_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
-</p>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">my kid's firsts</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li> <%= link_to 'Login', login_path %> </li>
+            <li> <%= link_to 'Sign Up', new_user_path %> </li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+</nav>
 
 <%= yield %>
 

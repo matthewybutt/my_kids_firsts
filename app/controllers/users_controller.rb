@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "You're signed up!"
       session[:user_id] = @user.id
-      redirect_to new_child_path
+      redirect_to children_path
     else
       render 'new'
     end
