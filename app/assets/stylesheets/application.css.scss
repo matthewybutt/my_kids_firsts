@@ -29,6 +29,10 @@ body {
   padding-top: 70px;
 }
 
+.head-font{
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
 .title {
   font-family: 'Love Ya Like A Sister', cursive;
   font-size: 60px;
@@ -43,14 +47,19 @@ body {
 }
 
 .col-centered {
-  float: none;
   margin: 0 auto;
 }
 
-.user-posts th, td {
+table th, td {
   padding: 5px;
 }
-/* Try to get the up/down arrows to display on tables
+
+/*.edit-user-form {
+  width: 280px ;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+ Try to get the up/down arrows to display on tables
 .nice th .current {
   padding-right: 12px;
   background-repeat: no-repeat;

@@ -36,7 +36,7 @@
 
     <div class="col-sm-7">
      <div class="post-table col-centered">
-      <table>
+      <table class="table-bordered table-hover col-centered">
         <tr>
           <th><%= "Title" %></th>
           <th><%= "Text" %></th>
@@ -58,7 +58,7 @@
         <% end %>
       </table>
 
-      <h5> <%= @child.name %> was born on <%= @child.birthday.strftime("%B %d, %Y") %>! </h5>
+      <h5 class="text-center"> <%= @child.name %> was born on <%= @child.birthday.strftime("%B %d, %Y") %>! </h5>
     </div>
    </div>
   </div>
