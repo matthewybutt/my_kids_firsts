@@ -39,17 +39,30 @@ table th, td {
   font-family: 'Love Ya Like A Sister', cursive;
 }
 
-.title {
-  font-family: 'Love Ya Like A Sister', cursive;
-  font-size: 60px;
-}
-
 .navbar-brand {
   font-family: 'Love Ya Like A Sister', cursive;
 }
 
 .navbar {
   font-size: 14px;
+}
+
+.title {
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 60px;
+}
+
+.jumbo-font {
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.jumbotron {
+  position: relative;
+  background: #000 url("shoes.jpg") center center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .col-centered {
