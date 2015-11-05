@@ -42,6 +42,14 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.user-posts th, td {
+  padding: 5px;
+}
 /* Try to get the up/down arrows to display on tables
 .nice th .current {
   padding-right: 12px;

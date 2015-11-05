@@ -6,23 +6,26 @@
     </div>
   </div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Birthday</th>
-  </tr>
+  <p class="text-center"> Click on a name to add a first! </p>
 
-     <% @child.each do |child| %>
-
+  <table class="user-posts table-bordered table-hover col-centered">
     <tr>
-      <td><%= link_to child.name, child_path(child) %></td>
-      <td><%= child.birthday.strftime("%m/%d/%Y") %></td>
-      <td><%= link_to 'Select', child_path(child) %></td>
-
+      <th>Name</th>
+      <th>Birthday</th>
     </tr>
-  <% end %>
-</table>
 
-<%= link_to 'Add A Child', new_child_path %>
+       <% @child.each do |child| %>
+
+      <tr>
+        <td><%= link_to child.name, child_path(child) %></td>
+        <td><%= child.birthday.strftime("%m/%d/%Y") %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <br>
+
+  <p class="text-center"> <%= link_to 'Add A Child', new_child_path %> </p>
+
 
 </div>
