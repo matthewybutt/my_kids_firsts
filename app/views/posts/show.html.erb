@@ -6,25 +6,24 @@
     </div>
   </div>
 
-  <div class="post-form">
-    <%= link_to(@post.image_url) do %>
-      <%= image_tag(@post.image_url, width: "300px") if @post.image_url? %>
-    <% end %>
-    <p>
-      <strong>Title:</strong>
+    <div class="posted-img text-center">
+      <%= link_to(@post.image_url) do %>
+        <%= image_tag(@post.image_url, width: "300px") if @post.image_url? %>
+      <% end %>
+    </div>
+    <h3 class="head-font text-center">
       <%= @post.title %>
-    </p>
+    </h3>
 
+  <div class="posts-show">
     <p>
-      <strong>Text:</strong>
       <%= @post.text %>
     </p>
 
      <p>
-      <strong>Event Date:</strong>
       <%= @post.event_date.strftime("%m/%d/%Y") %>
     </p>
-    <div class="text-center">
+    <div>
       <%= link_to 'Edit', edit_post_path(@post) %>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to 'Delete', child_post_path(@post.child_id, @post),
@@ -33,5 +32,6 @@
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to 'Back', child_path(@post.child_id)%>
     </div>
+    <br>
   </div>
 </div>

@@ -73,9 +73,30 @@ table th, td {
   background: #E0FFE2;
 }
 
+.child-show-post-form {
+  width: 342px;
+  margin: 0 auto;
+}
+
+.posts-show {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.posted-img {
+  border: 2px solid black;
+  border-radius: 30px;
+  width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .post-table {
   font-size: 14px;
 }
+
 
 .post-form {
   width: 300px;
