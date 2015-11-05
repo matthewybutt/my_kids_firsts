@@ -21,7 +21,7 @@ babybowser = bowser.children.create(
 
 bb1 = babybowser.posts.create(
   title: 'Baby Bowser was born!',
-  text: 'A really big stork dropped you off on the airship.  We will rule the mushroom kingdon forever!',
+  text: 'A really big stork dropped you off on the airship.  We will rule the mushroom kingdom forever!',
   event_date: DateTime.parse('95/8/15'),
   user_id: bowser.id,
   child_id: babybowser.id,
