@@ -5,6 +5,12 @@
       <p class="text-center">A First for <%= @post.child.name %>!</p>
     </div>
   </div>
+
+
+  <%= link_to(@post.image_url) do %>
+    <%= image_tag(@post.image_url, width: "300px") if @post.image_url? %>
+  <% end %>
+
   <p>
     <strong>Title:</strong>
     <%= @post.title %>

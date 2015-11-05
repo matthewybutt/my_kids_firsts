@@ -22,6 +22,11 @@
           </p>
 
           <p>
+            <%= f.label :image_url %>
+            <%= f.text_field :image_url, size: "40" %>
+          </p>
+
+          <p>
             <%= f.label :event_date %><br>
             <%= f.date_select :event_date, start_year: 1900, end_year: Time.now.year,
                               :order => [:month, :day, :year] %>
@@ -36,12 +41,12 @@
 
     <div class="col-sm-6">
      <div class="post-table col-centered">
-      <table class="table-hover table-bordered col-centered">
+      <table class="table table-hover table-bordered col-centered">
         <thead>
         <tr class="row-head-color">
-          <th><%= "Title" %></th>
-          <th><%= "Text" %></th>
-          <th><%= sortable "event_date", "Date" %></th>
+          <th class="col-sm-4"><%= "Title" %></th>
+          <th class="col-sm-6"><%= "Text" %></th>
+          <th class="col-sm-2"><%= sortable "event_date", "Date" %></th>
         </tr>
         </thead>
 
