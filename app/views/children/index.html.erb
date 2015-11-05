@@ -9,11 +9,14 @@
   <p class="text-center"> Click on a name to add a first! </p>
 
   <table class="table-bordered table-hover col-centered">
-    <tr>
+    <thead>
+    <tr class="row-head-color">
       <th>Name</th>
       <th>Birthday</th>
     </tr>
+    </thead>
 
+    <tbody>
        <% @child.each do |child| %>
 
       <tr>
@@ -21,6 +24,7 @@
         <td><%= child.birthday.strftime("%m/%d/%Y") %></td>
       </tr>
     <% end %>
+    </tbody>
   </table>
 
   <br>

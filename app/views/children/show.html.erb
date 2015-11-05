@@ -36,13 +36,16 @@
 
     <div class="col-sm-6">
      <div class="post-table col-centered">
-      <table class="table-bordered table-hover col-centered">
-        <tr>
+      <table class="table-hover table-bordered col-centered">
+        <thead>
+        <tr class="row-head-color">
           <th><%= "Title" %></th>
           <th><%= "Text" %></th>
           <th><%= sortable "event_date", "Date" %></th>
         </tr>
+        </thead>
 
+        <tbody>
         <% @posts.each do |post| %>
 
           <tr>
@@ -51,6 +54,7 @@
             <td class="text-center"><%= post.event_date.strftime("%m/%d/%y") %></td>
           </tr>
         <% end %>
+        </tbody>
       </table>
 
       <h2 class="head-font text-center">
