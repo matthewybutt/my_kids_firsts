@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="child-show-post-form col-centered">
-        <%= form_for [@child, Post.new] do |f| %>
+        <%= form_for [@child, Post.new], html: { multipart: true } do |f| %>
          <p>
             <%= f.label :title, "What happened today?" %><br>
             <%= f.text_field :title, size: "40"  %>
@@ -22,7 +22,12 @@
           </p>
 
           <p>
-            <%= f.label :image_url %>
+            <%= f.label :image, "Upload an image" %>
+            <%= f.file_field :image %>
+          </p>
+
+          <p>
+            <%= f.label :image_url, "Or paste an image link:" %>
             <%= f.text_field :image_url, size: "40" %>
           </p>
 

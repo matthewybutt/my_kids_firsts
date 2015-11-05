@@ -35,7 +35,12 @@
       </p>
 
       <p>
-        <%= f.label :image_url %>
+        <%= f.label :image, "Upload an image" %>
+        <%= f.file_field :image %>
+      </p>
+
+      <p>
+        <%= f.label :image_url, "Or paste an image link:" %>
         <%= f.text_field :image_url, size: "35" %>
       </p>
 

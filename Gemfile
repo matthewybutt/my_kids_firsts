@@ -32,6 +32,8 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'puma'
 
+gem "paperclip", "~> 4.3"
+
 gem 'rails_12factor', group: :production
 
 gem 'bootstrap-sass', '~> 3.2.0'
