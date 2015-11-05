@@ -24,7 +24,7 @@ class ChildrenController < ApplicationController
     @child = Child.new(child_params)
     @child.user_id = current_user.id
     if @child.save
-      redirect_to account_path
+      redirect_to children_path
     else
       render 'new'
     end
