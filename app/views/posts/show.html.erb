@@ -22,5 +22,9 @@
 
   <%= link_to 'Edit', edit_post_path(@post) %>
   &nbsp;&nbsp;|&nbsp;&nbsp;
+  <%= link_to 'Delete', child_post_path(@post.child_id, @post),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
   <%= link_to 'Back', child_path(@post.child_id)%>
 </div>
