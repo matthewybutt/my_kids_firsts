@@ -2,22 +2,22 @@
 
   <div class="row title">
     <div class="col-md-12">
-      <p class="text-center"> What did <%= @child.name %> do today? </p>
+      <p class="text-center"> All the things <u><%= @child.name %></u> has done! </p>
     </div>
   </div>
 
   <br>
   <div class="row">
-    <div class="col-sm-5">
+    <div class="col-sm-6">
       <div class="post-form col-centered">
         <%= form_for [@child, Post.new] do |f| %>
          <p>
-            <%= f.label :title %><br>
-            <%= f.text_field :title %>
+            <%= f.label :title, "What happened today?" %><br>
+            <%= f.text_field :title, size: "40"  %>
           </p>
 
           <p>
-            <%= f.label :text %><br>
+            <%= f.label :text, "More details..." %><br>
             <%= f.text_area :text, size: "40x5" %>
           </p>
 
@@ -34,13 +34,13 @@
       </div>
     </div>
 
-    <div class="col-sm-7">
+    <div class="col-sm-6">
      <div class="post-table col-centered">
       <table class="table-bordered table-hover col-centered">
         <tr>
           <th><%= "Title" %></th>
           <th><%= "Text" %></th>
-          <th><%= sortable "event_date", "Event Date"  %></th>
+          <th><%= sortable "event_date", "Date"  %></th>
         </tr>
 
         <% @posts.each do |post| %>
@@ -58,7 +58,9 @@
         <% end %>
       </table>
 
-      <h5 class="text-center"> <%= @child.name %> was born on <%= @child.birthday.strftime("%B %d, %Y") %>! </h5>
+      <h2 class="head-font text-center">
+        <%= @child.name %> was born on <%= @child.birthday.strftime("%B %d, %Y") %>!
+      </h2>
     </div>
    </div>
   </div>
