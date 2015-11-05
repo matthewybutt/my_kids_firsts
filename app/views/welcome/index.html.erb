@@ -6,9 +6,15 @@
       <p>Record all your child's "firsts" in life with this easy, blog style scrapbook.</p>
     </div>
     <div class="text-center" style="font-size: 20px">
-      <%= link_to 'Login', login_path %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-      <%= link_to 'Sign Up', signup_path %>
+      <% if current_user %>
+        <%= link_to 'Your Children', children_path %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+      <% else %>
+        <%= link_to 'Login', login_path %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Sign Up', signup_path %>
+      <% end %>
     </div>
   </div>
 
