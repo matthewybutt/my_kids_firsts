@@ -1,36 +1,61 @@
-<h1>New Post</h1>
+<div class="container-fluid">
 
-<%= form_for :post, url: posts_path, html: { multipart: true } do |f| %>
-
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@post.errors.count, "error") %> prohibited
-        this post from being saved:
-      </h2>
-      <ul>
-        <% @post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+  <div class="row title">
+    <div class="col-md-12">
+      <p class="text-center">New Post!</p>
     </div>
-  <% end %>
+  </div> 
 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+  <div class="post-form">
+    <%= form_for :post, url: posts_path, html: { multipart: true } do |f| %>
 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
+      <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@post.errors.count, "error") %> prohibited
+            this post from being saved:
+          </h2>
 
-<!--add image_url, event_date, tags-->
+          <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+      <p>
+        <%= hidden_field_tag(:child_id, @post.child_id) %>
+        <%= f.label :title, "What happened today?" %><br>
+        <%= f.text_field :title, size: "40"  %>
+      </p>
 
-<%= link_to 'Back', posts_path %>
+      <p>
+        <%= f.label :text, "More details..." %><br>
+        <%= f.text_area :text, size: "40x5" %>
+      </p>
+
+      <p>
+        <%= f.label :image, "Upload an image" %>
+        <%= f.file_field :image %>
+      </p>
+
+      <p>
+        <%= f.label :image_url, "Or paste an image link:" %>
+        <%= f.text_field :image_url, size: "40" %>
+      </p>
+
+      <p>
+        <%= f.label :event_date %><br>
+        <%= f.date_select :event_date, start_year: 1900, end_year: Time.now.year,
+                          :order => [:month, :day, :year] %>
+      </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+  </div>
+</div>
+  <div class="text-center"> <%= link_to 'Back', child_path(@post.child_id)%> </div>
+<br>

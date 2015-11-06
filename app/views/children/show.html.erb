@@ -10,6 +10,7 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="child-show-post-form col-centered">
+
         <%= form_for [@child, Post.new], html: { multipart: true } do |f| %>
          <p>
             <%= f.label :title, "What happened today?" %><br>
