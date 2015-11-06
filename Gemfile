@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'puma'
 
 gem "paperclip", "~> 4.3"
+gem 'aws-sdk', '~> 2'
 
 gem 'rails_12factor', group: :production
 
