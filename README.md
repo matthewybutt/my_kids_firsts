@@ -34,9 +34,7 @@ This app is a digital baby book for keeping track of all your child's big milest
 
 ###Get Started
 * There is nothing that needs to be installed on your computer for the app to run
-* Open your web browser and either copy & paste or click on this link: 
-
-[https://morning-badlands-2143.herokuapp.com/](https://morning-badlands-2143.herokuapp.com/)
+* Open your web browser and either copy & paste or click on this link: [https://morning-badlands-2143.herokuapp.com/](https://morning-badlands-2143.herokuapp.com/)
 
 ###Next Steps & Unsolved Problems
 * Authorizing other users to see your board(s)
