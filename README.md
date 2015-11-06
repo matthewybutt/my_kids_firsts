@@ -14,6 +14,8 @@ This app is a digital baby book for keeping track of all your child's big milest
 * Software
     * Sublime
         * Ruby, Ruby on Rails, HTML, CSS, Bootstrap coding
+    * PostgreSQL
+        * Database system for Ruby
     * Google Chrome web browser
         * Developer Tools for testing code
     * Git
@@ -41,4 +43,4 @@ This app is a digital baby book for keeping track of all your child's big milest
 * Authorizing another user to share your account (like a spouse)
 * Allowing subscriptions for other users to be updated on posts
 * Ability to change themes for your boards (change font style, colors, etc.)
-* Recieve and send "forgot password" reset requests
+* Receive and send "forgot password" reset requests

@@ -8,7 +8,9 @@
 
     <div class="posted-img text-center">
       <% if @post.image.url != '/images/original/missing.png' %>
-        <%= image_tag @post.image.url(:medium) %>
+        <%= link_to(@post.image.url) do %>
+          <%= image_tag @post.image.url(:medium) %>
+        <% end %>
       <% end %>
       <%= link_to(@post.image_url) do %>
         <%= image_tag(@post.image_url, width: "300px") if @post.image_url? %>
@@ -37,4 +39,5 @@
     </div>
     <br>
   </div>
+  <br>
 </div>

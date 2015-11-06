@@ -6,6 +6,17 @@
     </div>
   </div> 
 
+    <div class="posted-img text-center">
+      <% if @post.image.url != '/images/original/missing.png' %>
+        <%= link_to(@post.image.url) do %>
+          <%= image_tag @post.image.url(:medium) %>
+        <% end %>
+      <% end %>
+      <%= link_to(@post.image_url) do %>
+        <%= image_tag(@post.image_url, width: "300px") if @post.image_url? %>
+      <% end %>
+    </div>
+
   <div class="post-form">
     <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
 
@@ -22,6 +33,8 @@
           </ul>
         </div>
       <% end %>
+
+    <br>
 
       <p>
         <%= hidden_field_tag(:child_id, @post.child_id) %>
@@ -56,4 +69,6 @@
 
     <% end %>
   </div>
+  <div class="text-center"> <%= link_to 'Back', child_path(@post.child_id)%> </div>
+  <br>
 </div>
