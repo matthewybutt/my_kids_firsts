@@ -27,10 +27,19 @@ body {
   /*padding-top: 70px;*/
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  background: url("lightpaperfibers.png");
 }
 
 table th, td {
   padding: 5px;
+}
+
+table th {
+  background: #E0FFE2;
+}
+
+table td {
+  background: white;
 }
 
 .head-font{
@@ -67,9 +76,6 @@ table th, td {
   margin: 0 auto;
 }
 
-.row-head-color {
-  background: #E0FFE2;
-}
 
 .child-show-post-form {
   width: 342px;
@@ -89,6 +95,7 @@ table th, td {
   width: 375px;
   margin-left: auto;
   margin-right: auto;
+  background: white;
 }
 
 .post-table {

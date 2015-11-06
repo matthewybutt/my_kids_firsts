@@ -1,11 +1,11 @@
-#[My Kid's Firsts](https://morning-badlands-2143.herokuapp.com/)
+#[my kid's firsts](https://morning-badlands-2143.herokuapp.com/)
 
-![] (http://i.imgur.com/AmArZiA.png =200x)
+![] (https://i.imgur.com/GBMMMkq.png =200x)
 
 This app is a digital baby book for keeping track of all your child's big milestones!  Keep an active record using blog posts of all the firsts your child does!
 
 ###User Stories, Wireframes, ERD
-[User Stories, Wireframes, ERD](https://trello.com/b/SnZUlXRA/wdi-project-2)
+[Trello Board](https://trello.com/b/SnZUlXRA/my-kid-s-firsts)
 
 ###Technologies
 * Hardware
@@ -32,11 +32,12 @@ This app is a digital baby book for keeping track of all your child's big milest
         * design ERD files for the project
 
 ###Design
-* Started with ERD, wireframing and user stories.  I drew out the ERD models a few different ways to make sure the model I was using had the correct relationships.  Then I wrote the user stories and sketched out the layout for the site.  The requirements were to have user auth and CRUD applications.
+* Started with ERD, wireframing and user stories.  Drew out the ERD models a few different ways to make sure the model I was using had the correct relationships.  Then wrote the user stories and sketched out the layout for the site.  The requirements were to have user auth and CRUD applications.
 
 ###Get Started
 * There is nothing that needs to be installed on your computer for the app to run
-* Open your web browser and either copy & paste or click on this link: [https://morning-badlands-2143.herokuapp.com/](https://morning-badlands-2143.herokuapp.com/)
+* Open your web browser and either copy & paste or click on this link: 
+    * [https://morning-badlands-2143.herokuapp.com/](https://morning-badlands-2143.herokuapp.com/)
 
 ###Next Steps & Unsolved Problems
 * Authorizing other users to see your board(s)

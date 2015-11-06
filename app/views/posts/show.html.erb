@@ -35,7 +35,8 @@
                         method: :delete,
                         data: { confirm: 'Are you sure?' } %>
       &nbsp;&nbsp;|&nbsp;&nbsp;
-      <%= link_to 'Back', child_path(@post.child_id)%>
+      <%= link_to'Back to ', child_path(@post.child_id) %>
+      <%= link_to @post.child.name, child_path(@post.child_id)%>
     </div>
     <br>
   </div>
