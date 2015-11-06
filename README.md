@@ -1,9 +1,11 @@
-#My Kid's Firsts
+#[My Kid's Firsts](https://morning-badlands-2143.herokuapp.com/)
+
+[]:(http://i.imgur.com/AmArZiA.png =200x)
 
 This app is a digital baby book for keeping track of all your child's big milestones!  Keep an active record using blog posts of all the firsts your child does!
 
 ###User Stories, Wireframes, ERD
-[my kid's firsts](https://trello.com/b/SnZUlXRA/wdi-project-2)
+[User Stories, Wireframes, ERD](https://trello.com/b/SnZUlXRA/wdi-project-2)
 
 ###Technologies
 * Hardware
@@ -32,7 +34,9 @@ This app is a digital baby book for keeping track of all your child's big milest
 
 ###Get Started
 * There is nothing that needs to be installed on your computer for the app to run
-* Open your web browser and either copy & paste or click on this link: [coming soon](http://#)
+* Open your web browser and either copy & paste or click on this link: 
+
+[https://morning-badlands-2143.herokuapp.com/](https://morning-badlands-2143.herokuapp.com/)
 
 ###Next Steps & Unsolved Problems
 * Authorizing other users to see your board(s)
